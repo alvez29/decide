@@ -15,7 +15,7 @@ install:
 script:
 - cd decide
 - cp travis_local_settings.py local_settings.py
-- coverage run --branch --source=. ./manage.py test mixnet --keepdb --with-xunit
+- coverage run --branch --source=. ./manage.py test mixnet --keepdb
 deploy:
   provider: heroku
   app: decide-alvaro-egc
