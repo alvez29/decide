@@ -15,9 +15,11 @@ install:
 script:
 - cd decide
 - cp travis_local_settings.py local_settings.py
-- coverage run --branch --source=. ./manage.py test mixnet --keepdb
+- coverage run --branch --source=. ./manage.py test --keepdb
 deploy:
   provider: heroku
   app: decide-alvaro-egc
   strategy: git
   api_key: $HEROKU_AUTH_TOKEN
+  on:
+    branch: master
